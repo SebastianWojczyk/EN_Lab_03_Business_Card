@@ -15,6 +15,43 @@ namespace Business_Card
         public Form1()
         {
             InitializeComponent();
+            
+            comboBoxPosition.Items.Add("Student");
+            comboBoxPosition.Items.Add("Programmer");
+            comboBoxPosition.Items.Add("Manager");
+            comboBoxPosition.Items.Add("Barista");
+            comboBoxPosition.Items.Add("Driver");
+
+            dateTimePickerBirth.MinDate = DateTime.Today.AddYears(-100);
+            dateTimePickerBirth.MaxDate = DateTime.Today.AddYears(-18);
+
+            numericUpDownExperience.Minimum = 0;
+            numericUpDownExperience.Maximum = 50;
+
+        }
+
+        private void buttonGenerate_Click(object sender, EventArgs e)
+        {
+            richTextBoxCard.Clear();
+            richTextBoxCard.AppendText($"Name: {textBoxFirstName.Text} {textBoxLastName.Text}\n");
+            richTextBoxCard.AppendText($"Email: {textBoxEmail.Text}\n");
+            richTextBoxCard.AppendText($"Date of birth: {dateTimePickerBirth.Value.ToLongDateString()}\n");
+            richTextBoxCard.AppendText($"Position: {comboBoxPosition.Text}\n");
+            richTextBoxCard.AppendText($"Experience: {numericUpDownExperience.Value} years\n");
+            {
+                string workTime = "---";
+                if(radioButtonFullTime.Checked)
+                {
+                    workTime = "Full-time";
+                }
+                else if (radioButtonPartTime.Checked)
+                {
+                    workTime = "Part-time";
+                }
+                richTextBoxCard.AppendText($"Work time: {workTime}\n");
+            }
+            richTextBoxCard.AppendText($"Remote work: {(checkBoxRemote.Checked?"Yes":"No")}\n");
+            richTextBoxCard.AppendText($"Driver license: {(checkBoxRemote.Checked?"Yes":"No")}\n");
         }
     }
 }
