@@ -15,7 +15,7 @@ namespace Business_Card
         public Form1()
         {
             InitializeComponent();
-            
+
             comboBoxPosition.Items.Add("Student");
             comboBoxPosition.Items.Add("Programmer");
             comboBoxPosition.Items.Add("Manager");
@@ -40,7 +40,7 @@ namespace Business_Card
             richTextBoxCard.AppendText($"Experience: {numericUpDownExperience.Value} years\n");
             {
                 string workTime = "---";
-                if(radioButtonFullTime.Checked)
+                if (radioButtonFullTime.Checked)
                 {
                     workTime = "Full-time";
                 }
@@ -50,8 +50,8 @@ namespace Business_Card
                 }
                 richTextBoxCard.AppendText($"Work time: {workTime}\n");
             }
-            richTextBoxCard.AppendText($"Remote work: {(checkBoxRemote.Checked?"Yes":"No")}\n");
-            richTextBoxCard.AppendText($"Driver license: {(checkBoxRemote.Checked?"Yes":"No")}\n");
+            richTextBoxCard.AppendText($"Remote work: {(checkBoxRemote.Checked ? "Yes" : "No")}\n");
+            richTextBoxCard.AppendText($"Driver license: {(checkBoxRemote.Checked ? "Yes" : "No")}\n");
         }
 
         private void buttonPhoto_Click(object sender, EventArgs e)
@@ -59,11 +59,35 @@ namespace Business_Card
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Jpeg|*.jpg";
 
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string fileName = openFileDialog.FileName;
                 pictureBoxPhoto.Image = Image.FromFile(fileName);
             }
+        }
+
+        private void newClearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxFirstName.Clear();
+            textBoxLastName.Clear();
+            textBoxEmail.Clear();
+            dateTimePickerBirth.Value = dateTimePickerBirth.MaxDate;
+            comboBoxPosition.Text = "";
+            comboBoxPosition.SelectedItem = null;
+            numericUpDownExperience.Value = numericUpDownExperience.Minimum;
+            radioButtonFullTime.Checked = false;
+            radioButtonPartTime.Checked = false;
+            checkBoxRemote.Checked = false;
+            checkBoxDriver.Checked = false;
+
+            richTextBoxCard.Clear();
+            pictureBoxPhoto.Image = null;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+            Application.Exit();
         }
     }
 }

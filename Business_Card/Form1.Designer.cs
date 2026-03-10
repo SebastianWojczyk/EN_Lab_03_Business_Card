@@ -52,8 +52,15 @@ namespace Business_Card
             this.richTextBoxCard = new System.Windows.Forms.RichTextBox();
             this.buttonPhoto = new System.Windows.Forms.Button();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newClearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownExperience)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxFirstName
@@ -257,6 +264,54 @@ namespace Business_Card
             this.pictureBoxPhoto.TabIndex = 24;
             this.pictureBoxPhoto.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cardToolStripMenuItem,
+            this.optionsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(641, 24);
+            this.menuStrip1.TabIndex = 25;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // cardToolStripMenuItem
+            // 
+            this.cardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newClearToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.cardToolStripMenuItem.Name = "cardToolStripMenuItem";
+            this.cardToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.cardToolStripMenuItem.Text = "Card";
+            // 
+            // newClearToolStripMenuItem
+            // 
+            this.newClearToolStripMenuItem.Name = "newClearToolStripMenuItem";
+            this.newClearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newClearToolStripMenuItem.Text = "New / Clear";
+            this.newClearToolStripMenuItem.Click += new System.EventHandler(this.newClearToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.appearanceToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // appearanceToolStripMenuItem
+            // 
+            this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appearanceToolStripMenuItem.Text = "Appearance";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,10 +340,14 @@ namespace Business_Card
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownExperience)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,6 +378,12 @@ namespace Business_Card
         private System.Windows.Forms.RichTextBox richTextBoxCard;
         private System.Windows.Forms.Button buttonPhoto;
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newClearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem appearanceToolStripMenuItem;
     }
 }
 
