@@ -311,6 +311,7 @@ namespace Business_Card
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
             this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
+            this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -343,7 +344,7 @@ namespace Business_Card
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Business Card Generator v0.1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownExperience)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.menuStrip1.ResumeLayout(false);

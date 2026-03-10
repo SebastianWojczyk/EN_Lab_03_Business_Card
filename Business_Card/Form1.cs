@@ -89,5 +89,22 @@ namespace Business_Card
             //this.Close();
             Application.Exit();
         }
+
+        private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOptions formOptions = new FormOptions();
+
+            formOptions.OptionFontSize = (int)richTextBoxCard.Font.Size;
+
+            if (formOptions.ShowDialog() == DialogResult.OK)
+            {
+                richTextBoxCard.Font = new Font(richTextBoxCard.Font.FontFamily,
+                                                formOptions.OptionFontSize);
+
+                //for light or dark mode
+                //richTextBoxCard.BackColor;
+                //richTextBoxCard.ForeColor;
+            }
+        }
     }
 }
