@@ -53,5 +53,17 @@ namespace Business_Card
             richTextBoxCard.AppendText($"Remote work: {(checkBoxRemote.Checked?"Yes":"No")}\n");
             richTextBoxCard.AppendText($"Driver license: {(checkBoxRemote.Checked?"Yes":"No")}\n");
         }
+
+        private void buttonPhoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Jpeg|*.jpg";
+
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = openFileDialog.FileName;
+                pictureBoxPhoto.Image = Image.FromFile(fileName);
+            }
+        }
     }
 }

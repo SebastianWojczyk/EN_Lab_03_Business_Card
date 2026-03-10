@@ -50,7 +50,10 @@ namespace Business_Card
             this.label9 = new System.Windows.Forms.Label();
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.richTextBoxCard = new System.Windows.Forms.RichTextBox();
+            this.buttonPhoto = new System.Windows.Forms.Button();
+            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownExperience)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxFirstName
@@ -235,11 +238,32 @@ namespace Business_Card
             this.richTextBoxCard.TabIndex = 20;
             this.richTextBoxCard.Text = "";
             // 
+            // buttonPhoto
+            // 
+            this.buttonPhoto.Location = new System.Drawing.Point(415, 204);
+            this.buttonPhoto.Name = "buttonPhoto";
+            this.buttonPhoto.Size = new System.Drawing.Size(207, 23);
+            this.buttonPhoto.TabIndex = 23;
+            this.buttonPhoto.Text = "Open photo file";
+            this.buttonPhoto.UseVisualStyleBackColor = true;
+            this.buttonPhoto.Click += new System.EventHandler(this.buttonPhoto_Click);
+            // 
+            // pictureBoxPhoto
+            // 
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(415, 233);
+            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(207, 204);
+            this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPhoto.TabIndex = 24;
+            this.pictureBoxPhoto.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 449);
+            this.Controls.Add(this.pictureBoxPhoto);
+            this.Controls.Add(this.buttonPhoto);
             this.Controls.Add(this.richTextBoxCard);
             this.Controls.Add(this.buttonGenerate);
             this.Controls.Add(this.label9);
@@ -264,6 +288,7 @@ namespace Business_Card
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownExperience)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,6 +317,8 @@ namespace Business_Card
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonGenerate;
         private System.Windows.Forms.RichTextBox richTextBoxCard;
+        private System.Windows.Forms.Button buttonPhoto;
+        private System.Windows.Forms.PictureBox pictureBoxPhoto;
     }
 }
 
